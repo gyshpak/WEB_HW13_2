@@ -1,0 +1,7 @@
+django
+django_mongoengine
+psycopg2
+pymongo
+pydantic
+pydantic_settings
+pydantic[email]
