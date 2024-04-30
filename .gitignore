@@ -5,4 +5,4 @@ __pycache__/
 virt_env/
 
 #settings
-#.env
+env
