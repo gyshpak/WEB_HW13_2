@@ -76,34 +76,20 @@ def add_author(request):
         return render(request, "quotes/add_author.html", {"form": AuthorForm()})
 
 
-# def add_author(request):
-#     if request.method == "POST":
-#         form = AuthorForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect(to="quotes:root")
-#         else:
-#             return render(request, "quotes/add_author.html", {"form": form})
-#     else:
-#         return render(request, "quotes/add_author.html", {"form": AuthorForm()})
-
-
 @login_required
 def add_quote(request):
     authors = Author.objects()
     if request.method == "POST":
         form = QuoteForm(request.POST)
         if form.is_valid():
-            # print(f" author = {form.authors}")
             form.save()
             return redirect(to="quotes:root")
         else:
-            # print(f" author = {form.quotes}")
             return render(request, "quotes/add_quote.html", {"form": form})
     else:
         return render(request, "quotes/add_quote.html", {"authors": authors, "form": QuoteForm()})
 
-    # return render(request, "quotes/add_quote.html", context={"quote": "add_quote"})
+  
 
 
 ###########################   TEST   #################################
